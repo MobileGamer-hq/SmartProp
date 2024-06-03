@@ -1,0 +1,49 @@
+DATA MODELS
+user model
+property model
+seller model
+buyer model
+transaction model
+advertisement model
+
+
+COLORS
+primary olors
+secondary olors
+tertiary olors
+background olors
+text colors
+
+FONT SIZE
+MAX 
+MID
+MIN
+
+
+SPACING
+MAX 
+MID
+MIN
+
+
+SIZES
+MAX 
+MIN
+MID
+
+PAGES
+Home Page
+profile Page
+dashboard
+
+BUTTONS
+
+IMAGES
+small display image
+big display image
+medium display image
+small profile image
+medium profile image 
+big profile image
+
+

@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { FlatButton } from './Components/Buttons';
+import { useState } from 'react';
 
 function App() {
+  const [_width, setWidth] = useState(10);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Hello World
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header" >
+        <FlatButton text={"Hello World"} color={"blue"}/>
+        <FlatButton text={"Hello World"} color={"#fff000"}/>
+        <FlatButton color = {"Orange"} text = {"I learned something new"}/>
+
+        <div style={{width: _width, backgroundColor: "orange"}} onClick={() => setWidth(_width + 1)}>
+          {_width}
+        </div>
+
       </header>
     </div>
   );

@@ -1,8 +1,19 @@
-import React from 'react'
+import React from 'react';
+import "../Styles/Home.css"
 
-function Home() {
+function Home({}) {
   return (
-    <div>Home</div>
+    <div>
+      <header>
+
+      </header>
+      <section>
+
+      </section>
+      <footer>
+        
+      </footer>
+    </div>
   )
 }
 

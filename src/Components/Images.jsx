@@ -4,10 +4,10 @@ export function SmallDisplayImage({}) {
   return <div style={{}}>{}</div>;
 }
 
-export function MediumDisplayImage({ text, color }) {
+export function MediumDisplayImage({}) {
   return <div style={{}}>{}</div>;
 }
 
-export function BigDisplayImage({ text, color }) {
+export function BigDisplayImage({}) {
   return <div style={{}}>{}</div>;
 }

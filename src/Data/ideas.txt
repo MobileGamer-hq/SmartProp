@@ -8,10 +8,10 @@ advertisement model
 
 
 COLORS
-primary olors
+primary colors 
 secondary olors
 tertiary olors
-background olors
+background olors #faf9f9 #fffafa #fffff0 #f0f8ff #f8f8ff
 text colors
 
 FONT SIZE

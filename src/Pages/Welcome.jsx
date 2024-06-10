@@ -41,6 +41,7 @@ function Welcome() {
           <div
             style={{
               fontSize: sizes.FONT_MAX,
+              textAlign: "center",
             }}
           >
             Enjoy The Experience of Finding your New Home
@@ -48,7 +49,7 @@ function Welcome() {
           <div
             style={{
               fontSize: sizes.FONT_MID,
-              
+              textAlign: "center",
             }}
           >
             Immerse yourself in our state of the art marketplace It"s not just
@@ -75,4 +76,4 @@ function Welcome() {
   );
 }
 
-export de
+export default Welcome;

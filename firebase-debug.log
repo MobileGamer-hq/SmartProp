@@ -1,0 +1,26 @@
+[debug] [2024-06-10T15:30:43.395Z] ----------------------------------------------------------------------
+[debug] [2024-06-10T15:30:43.412Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\david nduka\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-06-10T15:30:43.415Z] CLI Version:   13.11.2
+[debug] [2024-06-10T15:30:43.416Z] Platform:      win32
+[debug] [2024-06-10T15:30:43.417Z] Node Version:  v20.13.1
+[debug] [2024-06-10T15:30:43.418Z] Time:          Mon Jun 10 2024 16:30:43 GMT+0100 (West Africa Standard Time)
+[debug] [2024-06-10T15:30:43.419Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-10T15:30:43.472Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-06-10T15:30:43.808Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-10T15:30:43.809Z] > authorizing via signed-in user (ndukadavid90@gmail.com)
+[debug] [2024-06-10T15:30:43.809Z] [iam] checking project smartprop-beta for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-06-10T15:30:43.810Z] > refreshing access token with scopes: []
+[debug] [2024-06-10T15:30:43.812Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-06-10T15:30:43.812Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-10T15:30:45.230Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-06-10T15:30:45.231Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-10T15:30:45.543Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartprop-beta:testIamPermissions [none]
+[debug] [2024-06-10T15:30:45.543Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartprop-beta:testIamPermissions x-goog-quota-user=projects/smartprop-beta
+[debug] [2024-06-10T15:30:45.545Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartprop-beta:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-06-10T15:30:47.797Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-06-10T15:30:47.797Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-06-10T15:30:49.924Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartprop-beta:testIamPermissions 200
+[debug] [2024-06-10T15:30:49.925Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/smartprop-beta:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-06-10T15:30:49.930Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/smartprop-beta [none]
+[debug] [2024-06-10T15:30:50.637Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/smartprop-beta 200

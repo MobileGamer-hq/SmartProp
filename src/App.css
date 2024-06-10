@@ -27,9 +27,15 @@
 }
 
 .App {
+  display: flex;
   width: 100vw;
   height: 100vh;
   background-color: var(--background-color);
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: inline-block;
 }
 
 header {
@@ -39,3 +45,4 @@ header {
 footer {
   width: 100%;
 }
+

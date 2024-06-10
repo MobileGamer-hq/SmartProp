@@ -34,7 +34,12 @@ MID
 PAGES
 Home Page
 profile Page
-dashboard
+dashboard Page
+login Page
+signup Page
+search Page
+view property Page
+watchlist page
 
 BUTTONS
 
@@ -46,4 +51,16 @@ small profile image
 medium profile image 
 big profile image
 
+Amenities
+pool: false,
+gym: false,
+garage: false,
+laundry_room: false,
 
+
+How the algorithm works 
+create a copy of all the property's in out database
+each user has to have different points given to the property's
+
+
+sort the properties based on points they have 

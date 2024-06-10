@@ -7,8 +7,10 @@ function Home({}) {
       <header>
 
       </header>
-      <section>
-
+      <section className='body'>
+        <div className='message'>
+          Home
+        </div>
       </section>
       <footer>
         

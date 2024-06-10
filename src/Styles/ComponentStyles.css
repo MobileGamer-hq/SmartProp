@@ -37,3 +37,16 @@
 .dropdown-item:hover {
     background-color: #f0f0f0;
 }
+
+.side-bar {
+    
+}
+
+.textInput {
+    border-bottom: 1px solid transparent;
+}
+
+.textInput-active {
+    border-bottom: 1px solid grey;
+    transition: border-bottom 0.5s ease-in;
+}

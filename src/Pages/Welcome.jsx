@@ -31,13 +31,15 @@ function Welcome() {
         </div>
         <div
           style={{
+            display: "flex",
             flexDirection: "column",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: 400,
+            width: 500,
+
           }}
-        >
+        > 
           <div
             style={{
               fontSize: sizes.FONT_MAX,
@@ -56,7 +58,9 @@ function Welcome() {
             about the home, it"s about the experience
           </div>
         </div>
-        <div style={{
+        <div 
+        className="example-address"
+        style={{
           position: "absolute",
           bottom: 30,
           right: 30,

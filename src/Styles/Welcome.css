@@ -8,7 +8,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 
@@ -17,6 +17,10 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  position: absolute;
-  top: 0;
+
+}
+
+.example-address:hover {
+  scale: 1.05;
+  cursor: pointer;
 }

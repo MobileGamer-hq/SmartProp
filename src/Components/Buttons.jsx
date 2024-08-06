@@ -26,8 +26,8 @@ export function BeveledButton({
   color = colors.primary,
   width = sizes.BUTTON_WIDTH,
   padding = sizes.PADDING_MIN,
-  fontSize = sizes.FONT_MIN,
-  margin = sizes.MARGIN_MIN
+  fontSize = sizes.FONT_MIN + 1,
+  margin = sizes.MARGIN_MIN 
 }) {
   return (
     <div
@@ -37,8 +37,8 @@ export function BeveledButton({
         backgroundColor: color,
         color: colors.text2,
         padding: sizes.PADDING_MIN,
-        paddingRight: sizes.PADDING_MID,
-        paddingLeft: sizes.PADDING_MID,
+        paddingRight: sizes.PADDING_MID + 5,
+        paddingLeft: sizes.PADDING_MID + 5,
         borderRadius: sizes.MID,
         fontSize: fontSize,
         margin: margin,

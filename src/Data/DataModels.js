@@ -1,8 +1,8 @@
 export const sizes = {
   FONT_TITLE: 50,
-  FONT_MAX: 25,
-  FONT_MID: 15,
-  FONT_MIN: 11,
+  FONT_MAX: 35,
+  FONT_MID: 20,
+  FONT_MIN: 15,
 
   SPACES_MAX: 50,
   SPACES_MID: 25,
@@ -20,7 +20,7 @@ export const sizes = {
   MARGIN_MID: 10,
   MARGIN_MIN: 5,
 
-  BUTTON_WIDTH: 75,
+  BUTTON_WIDTH: 80,
 
 };
 

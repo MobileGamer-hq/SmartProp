@@ -55,6 +55,7 @@ export const signUp = async (usernaeme, email, password, role) => {
 
       newUser.id = userId;
       await setDoc(doc(db, "Users", userId), newUser);
+      
 
       // ...
     })
@@ -63,6 +64,8 @@ export const signUp = async (usernaeme, email, password, role) => {
       const errorMessage = error.message;
       // ..
     });
+
+
 }
 
 export const signIn = (email, password) => {

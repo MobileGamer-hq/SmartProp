@@ -40,9 +40,9 @@ export const colors = {
   primary_hover: "#00367F",
   primary_light: "#006DFF",
   secondary: "#FFFFFF",
-  tertiary: "#000000",
+  tertiary: "#070707",
   bg: "#FFFFFF",
-  text: "black",
+  text: "#070707",
   text2: "white",
   text3: "grey",
 };

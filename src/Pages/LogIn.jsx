@@ -5,9 +5,11 @@ import TextInput from "../Components/TextInput";
 import { BeveledButton, FlatButton } from "../Components/Buttons";
 import { signIn } from "../Data/FirebaseManager";
 import { colors, sizes } from '../Data/DataModels';
+import { useNavigate } from "react-router-dom";
 
 
 function LogIn() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   return (
@@ -19,8 +21,11 @@ function LogIn() {
           <TextInput text="Password" border={true} message={"password1234"} value={password} onTextInputChange={(input) => setPassword(input)}/>
         </div>
         <div>
-          <BeveledButton placeholder={"Log In"} width={sizes.BUTTON_WIDTH_MEDIUM} />
-          <FlatButton placeholder={"Don't Have an Account, Sign Up"} />
+          <BeveledButton placeholder={"Log In"} width={sizes.BUTTON_WIDTH_MEDIUM} onClick={() => {
+            signIn(email, password);
+            navigate("/")
+          }}/>
+          <FlatButton placeholder={"Don't Have an Account, Sign Up"} onClick={() => navigate("/sign-up")}/>
         </div>
       </div>
     </div>

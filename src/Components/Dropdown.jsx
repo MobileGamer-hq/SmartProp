@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import "../Styles/ComponentStyles.css"
+import { colors } from '../Data/DataModels';
 
-function Dropdown({options, placeholder}) {
+function Dropdown({options, placeholder, setOption}) {
 
     const[isOpen, setIsOpen] = useState(false);
     const[selectedOption, setSelectedOption] = useState(null);
@@ -13,17 +14,18 @@ function Dropdown({options, placeholder}) {
     const handleOptionClick = (option) => {
         setSelectedOption(option);
         setIsOpen(false);
+        setOption(option.value)
     }
 
   return (
     <div className='dropdown'>
-        <div className='dropdown-header' onClick={toggleDropdown}>
+        <div className={isOpen ? 'dropdown-header-active' : 'dropdown-header'} onClick={toggleDropdown} style={{color: selectedOption ? colors.text : colors.text3}}>
             {selectedOption ? selectedOption.label : placeholder}
         </div>
         <div>
             {
                 isOpen && (
-                    <div className='dropdown-list'>
+                    <div className='dropdown-list' style={{color: colors.text3}}>
                         {
                             options.map(option => (
                                 <div

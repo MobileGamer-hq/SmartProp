@@ -1,64 +1,30 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import "../Styles/LogInAndSignUp.css"
 import TextInput from "../Components/TextInput";
 import { BeveledButton, FlatButton } from "../Components/Buttons";
 import { signIn } from "../Data/FirebaseManager";
-import { sizes } from "../Data/DataModels";
+import { colors, sizes } from '../Data/DataModels';
+
 
 function LogIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        flex: 1,
-      }}
-    >
-      <div
-        style={{
-          width: "60%",
-        }}
-      >
-        LOGO
-      </div>
-      <div
-        style={{
-          width: "40%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around"
-        }}
-      >
-        <div>
-          <div style={{
-            fontSize: 20,
-            marginBottom: sizes.MARGIN_MID
-          }}>
-            Continue Where You Stopped!
-          </div>
+    <div className='container'>
+      <div className='floating-container' style={{ borderRadius: 20 }}>
+        <div style={{fontSize: sizes.FONT_MAX, color: colors.primary, textAlign: "center", width: "80%"}}>Continue Where You Stopped</div>
+        <div style={{width: "80%"}}>
           <TextInput text="Email" border={true} message={"example@email.com"} value={email} onTextInputChange={(input) => setEmail(input)} />
           <TextInput text="Password" border={true} message={"password1234"} value={password} onTextInputChange={(input) => setPassword(input)}/>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "100%",
-          }}
-        >
-          <BeveledButton
-            placeholder={"LogIn"}
-            onClick={() => signIn(email, password)}
-          />
-          <FlatButton placeholder={"I don't have an account, Sign Up"} />
+        <div>
+          <BeveledButton placeholder={"Log In"} width={sizes.BUTTON_WIDTH_MEDIUM} />
+          <FlatButton placeholder={"Don't Have an Account, Sign Up"} />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default LogIn;

@@ -26,6 +26,7 @@ import Search from "./Pages/Search";
 import ViewProperty from "./Pages/ViewProperty";
 import WatchList from "./Pages/WatchList";
 import Welcome from "./Pages/Welcome";
+import LearnMore from "./Pages/LearnMore";
 
 function App() {
   const navigate = useNavigate();
@@ -84,8 +85,9 @@ function App() {
           <div className="App" >
             <Routes>
               <Route path="/" element={<Welcome />} />
-              <Route path="/login" element={<LogIn />} />
-              <Route path="/signup" element={<SignUp />} />
+              <Route path="/log-in" element={<LogIn />} />
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/learn-more" element={<LearnMore />} />
             </Routes>
           </div>
         ) : (

@@ -5,26 +5,42 @@ import Logo from './Logo'
 import { BeveledButton, BorderBevelButton } from './Buttons'
 
 
-function HeaderBar() {
-  return (
-    <div className='header-bar' style={{
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-      height: sizes.HEADER_BAR
 
-    }}>
-      <Logo size={sizes.HEADER_BAR}/>
-      <div style={{
+function HeaderBar({showButton = false , getStarted, logIn}) {
+  if(showButton){
+    return (
+      <div className='header-bar' style={{
         display: "flex",
         flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        height: sizes.HEADER_BAR
+  
       }}>
-        <BorderBevelButton placeholder={"Log In"}/>
-        <BeveledButton placeholder={"Get Started"}/>
+        <Logo size={sizes.HEADER_BAR}/>
+        <div style={{
+          display: "flex",
+          flexDirection: "row",
+        }}>
+          <BorderBevelButton placeholder={"Log In"} onClick={logIn}/>
+          <BeveledButton placeholder={"Get Started"} onClick={getStarted}/>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }else{
+    return (
+      <div className='header-bar' style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        height: sizes.HEADER_BAR
+  
+      }}>
+        <Logo size={sizes.HEADER_BAR}/>
+      </div>
+    )
+  }
 }
 
 export default HeaderBar

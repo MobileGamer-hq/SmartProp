@@ -9,10 +9,10 @@ function TextInput({
         text: colors.text
     },
     width = '100%',
-    size = sizes.FONT_MIN,
+    size = sizes.BUTTON_FONT_MEDIUM - 1,
     type = 'text',
     text = 'input....',
-    margin = sizes.MARGIN_MID,
+    margin = sizes.MARGIN_MAX,
     onTextInputChange,
     onKeyDown = () => { },
     align = 'flex-start',

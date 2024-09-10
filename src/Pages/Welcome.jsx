@@ -19,25 +19,38 @@ import Logo from "../Components/Logo";
 
 function Welcome() {
   const navigate = useNavigate();
+
+  const getStarted = () => {
+    navigate("/sign-up")
+  }
+
+  const logIn = () => {
+    navigate("/log-in")
+  }
+
+  const learnMore = () => {
+    navigate("/learn-more")
+  }
+
   return (
     <div className="welcome">
       <section className="welcome-top">
-        <HeaderBar />
+        <HeaderBar showButton={true} getStarted={getStarted} logIn={logIn}/>
         <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <div style={{ fontSize: sizes.FONT_TITLE, color: colors.secondary, textWrap: "wrap", width: 900, textAlign: "center" }}>Enjoy The Experience of Finding your New Home</div>
-          <BeveledButton placeholder={"Get Started"} height={sizes.BUTTON_HEIGHT_LARGE} width={sizes.BUTTON_WIDTH_MEDIUM} />
+          <BeveledButton placeholder={"Get Started"} fontSize={sizes.BUTTON_FONT_LARGE} height={sizes.BUTTON_HEIGHT_LARGE} width={sizes.BUTTON_WIDTH_MEDIUM} onClick={getStarted}/>
         </div>
       </section>
       <section className="welcome-about">
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100%", paddingTop: 80 }}>
           <div>
             <div style={{ fontSize: sizes.FONT_MAX, color: colors.text, textWrap: "wrap", textAlign: "center" }}>What Is SmartProp?</div>
-            <div style={{ fontSize: sizes.FONT_MIN, color: colors.text, textWrap: "wrap", textAlign: "center" }}>Secure . Marketplace . And . Real-Time . Technologies for PROPerties</div>
+            <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", textAlign: "center" }}>Secure . Marketplace . And . Real-Time . Technologies for PROPerties</div>
           </div>
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", marginTop: 10 }}>
             <div style={{ margin: 20, display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "flex-start" }}>
-              <div style={{ fontSize: sizes.FONT_MIN, color: colors.text, textWrap: "wrap", width: 350, textAlign: "left", marginBottom: 20 }}>We know the process of finding, buying, and selling a HOUSE can be cumbersome, and tiring, and we are here ease up that process for you, giving you peace of mind as you acquire your new property.</div>
-              <BorderBevelButton placeholder={"Learn More"} width={sizes.BUTTON_WIDTH_MEDIUM} />
+              <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", width: 350, textAlign: "left", marginBottom: 20 }}>We know the process of finding, buying, and selling a HOUSE can be cumbersome, and tiring, and we are here ease up that process for you, giving you peace of mind as you acquire your new property.</div>
+              <BorderBevelButton placeholder={"Learn More"} width={sizes.BUTTON_WIDTH_MEDIUM} onClick={learnMore}/>
             </div>
             <div style={{ margin: 20 }}>
               <img style={{ width: 400 }} src={about} />
@@ -49,16 +62,16 @@ function Welcome() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100%", paddingTop: 80 }}>
           <div>
             <div style={{ fontSize: sizes.FONT_MAX, color: colors.text2, textWrap: "wrap", textAlign: "center" }}>Why Us?</div>
-            <div style={{ fontSize: sizes.FONT_MIN, color: colors.text2, textWrap: "wrap", textAlign: "center" }}>FIND, BUY, and SELL like never before</div>
+            <div style={{ fontSize: sizes.FONT_MID, color: colors.text2, textWrap: "wrap", textAlign: "center" }}>FIND, BUY, and SELL like never before</div>
           </div>
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", marginTop: 10 }}>
             <div style={{ margin: 20 }}>
               <img style={{ width: 400 }} src={why_us} />
             </div>
             <div style={{ margin: 20, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-              <div style={{ fontSize: sizes.FONT_MIN, color: colors.text2, textWrap: "wrap", width: 350, textAlign: "right", marginBottom: 20 }}>SMARTPROP eases the house hunting, buying, and selling processes by putting them all together on one online platform.</div>
-              <div style={{ fontSize: sizes.FONT_MIN, color: colors.text2, textWrap: "wrap", width: 350, textAlign: "right", marginBottom: 20 }}>Enjoy the convenience of finding, buying, and selling your new HOME on this all-in-one platform</div>
-              <BeveledButton placeholder={"Learn More"} width={sizes.BUTTON_WIDTH_MEDIUM} className="button-black" />
+              <div style={{ fontSize: sizes.FONT_MID, color: colors.text2, textWrap: "wrap", width: 350, textAlign: "right", marginBottom: 20 }}>SMARTPROP eases the house hunting, buying, and selling processes by putting them all together on one online platform.</div>
+              <div style={{ fontSize: sizes.FONT_MID, color: colors.text2, textWrap: "wrap", width: 350, textAlign: "right", marginBottom: 20 }}>Enjoy the convenience of finding, buying, and selling your new HOME on this all-in-one platform</div>
+              <BeveledButton placeholder={"Learn More"} width={sizes.BUTTON_WIDTH_MEDIUM} className="button-black" onClick={learnMore}/>
             </div>
 
           </div>
@@ -68,7 +81,7 @@ function Welcome() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100%", paddingTop: 80 }}>
           <div>
             <div style={{ fontSize: sizes.FONT_MAX, color: colors.text, textWrap: "wrap", textAlign: "center" }}>Are You A BUYER?</div>
-            <div style={{ fontSize: sizes.FONT_MIN, color: colors.text, textWrap: "wrap", textAlign: "center" }}>Enjoy the convenience of FINDING and BUYING your home on one online platform.</div>
+            <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", textAlign: "center" }}>Enjoy the convenience of FINDING and BUYING your home on one online platform.</div>
           </div>
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", marginTop: 10 }}>
             <Buyer_Options image={find_home_buyer} placeholder="Find Your HOME" />
@@ -82,12 +95,12 @@ function Welcome() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100%", paddingTop: 80 }}>
           <div>
             <div style={{ fontSize: sizes.FONT_MAX, color: colors.text2, textWrap: "wrap", textAlign: "center" }}>Are You A SELLER?</div>
-            <div style={{ fontSize: sizes.FONT_MIN, color: colors.text2, textWrap: "wrap", textAlign: "center", width: 700 }}>SMARTPROP simplifies the LEASING and LISTING processes by giving your property the visibility your property deserves with just a few clicks.</div>
+            <div style={{ fontSize: sizes.FONT_MID, color: colors.text2, textWrap: "wrap", textAlign: "center", width: 700 }}>SMARTPROP simplifies the LEASING and LISTING processes by giving your property the visibility your property deserves with just a few clicks.</div>
           </div>
 
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", }}>
-            <Seller_Options image={for_rent} placeholder={"Start Renting"} />
-            <Seller_Options image={for_sale} placeholder={"Start Selling"} />
+            <Seller_Options image={for_rent} placeholder={"Start Renting"} onClick={getStarted}/>
+            <Seller_Options image={for_sale} placeholder={"Start Selling"} onClick={getStarted}/>
           </div>
         </div>
       </section>
@@ -95,7 +108,7 @@ function Welcome() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "100%", paddingTop: 80 }}>
           <div>
             <div style={{ fontSize: sizes.FONT_MAX, color: colors.text, textWrap: "wrap", textAlign: "center" }}>So, Where Shall We Start?</div>
-            <div style={{ fontSize: sizes.FONT_MIN, color: colors.text, textWrap: "wrap", textAlign: "center" }}></div>
+            <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", textAlign: "center" }}></div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
@@ -112,7 +125,7 @@ function Welcome() {
       <footer style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-around", paddingTop: 30}}>
         <div>
           <Logo size={150}/>
-          <div style={{ fontSize: sizes.FONT_MIN, color: colors.text, textWrap: "wrap", textAlign: "center" }}>© SmartProp 2024. All Rights Reserved.</div>    
+          <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", textAlign: "center" }}>© SmartProp 2024. All Rights Reserved.</div>    
         </div>
         <div>
           IG LD X
@@ -128,16 +141,16 @@ function Buyer_Options({ image, placeholder }) {
       margin: 30, display: "flex", flexDirection: "column", alignItems: "center",
     }} >
       <img className="option" style={{ marginBottom: 10, height: 350 }} src={image} />
-      <div style={{ fontSize: sizes.FONT_MIN, color: colors.text, textWrap: "wrap", textAlign: "center" }}>{placeholder}</div>
+      <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", textAlign: "center" }}>{placeholder}</div>
     </div>
   )
 }
 
-function Seller_Options({ image, placeholder }) {
+function Seller_Options({ image, placeholder, onClick }) {
   return (
     <div style={{ margin: 30, display: "flex", flexDirection: "column", alignItems: "center", }}>
       <img style={{ marginBottom: 10, width: 300 }} src={image} className="option" />
-      <BorderBevelButton placeholder={placeholder} className="border-white-button" width={sizes.BUTTON_WIDTH_MEDIUM} />
+      <BorderBevelButton placeholder={placeholder} className="border-white-button" width={sizes.BUTTON_WIDTH_MEDIUM} onClick={onClick}/>
     </div>
   )
 }
@@ -146,7 +159,7 @@ function Options({ image, placeholder }) {
   return (
     <div style={{ margin: 30, display: "flex", flexDirection: "column", alignItems: "center", marginRight: 70, marginLeft: 70 }}>
       <img style={{ marginBottom: 10, width: 200 }} src={image} className="option" />
-      <div style={{ fontSize: sizes.FONT_MIN, color: colors.text, textWrap: "wrap", textAlign: "center" }}>{placeholder}</div>
+      <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", textAlign: "center" }}>{placeholder}</div>
     </div>
   )
 }

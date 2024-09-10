@@ -1,3 +1,17 @@
+.flat-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+}
+
+.flat-button:hover {
+    cursor: pointer;
+    color: var(--primary-color-hover);
+}
+
 .button {
     display: flex;
     flex-direction: row;

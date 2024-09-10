@@ -17,7 +17,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 //Pages
-import Home from "./Pages/Home";
+import BuyersHome from "./Pages/BuyersHome";
 import Profile from "./Pages/Profile";
 import Dashboard from "./Pages/Dashboard";
 import LogIn from "./Pages/LogIn";
@@ -94,8 +94,8 @@ function App() {
           <div className="App">
             <Routes>
               <Route
-                path={userRole === "buyer" ? "/" : "/home"}
-                element={<Home />}
+                path={userRole === "buyer" ? "/" : "/buyers-home"}
+                element={<BuyersHome />}
               />
               <Route
                 path={userRole === "seller" ? "/" : "/dashboard"}

@@ -32,8 +32,7 @@ function Welcome() {
     navigate("/learn-more")
   }
 
-  return (
-    <div className="welcome">
+  return (<div className="welcome">
       <section className="welcome-top">
         <HeaderBar showButton={true} getStarted={getStarted} logIn={logIn}/>
         <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>

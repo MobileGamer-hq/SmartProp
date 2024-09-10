@@ -16,6 +16,8 @@ import for_rent from "../Images/for-rent.png"
 import find_home from "../Images/find-home.png"
 import buy_home from "../Images/Buy-home.png"
 import Logo from "../Components/Logo";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaX, FaXTwitter, FaY } from "react-icons/fa6";
 
 function Welcome() {
   const navigate = useNavigate();
@@ -126,8 +128,12 @@ function Welcome() {
           <Logo size={150}/>
           <div style={{ fontSize: sizes.FONT_MID, color: colors.text, textWrap: "wrap", textAlign: "center" }}>© SmartProp 2024. All Rights Reserved.</div>    
         </div>
-        <div>
-          IG LD X
+        <div style={{display: "flex", flexDirection: "row", width: 200, justifyContent: "space-between"}}>
+          <FaInstagram id="icon" href=""/>
+          <FaLinkedin id="icon" href=""/>
+          <FaXTwitter id="icon"  href=""/>
+          <FaFacebook id="icon" href=""/>
+          <FaYoutube id="icon" href=""/>
         </div>
       </footer>
     </div>

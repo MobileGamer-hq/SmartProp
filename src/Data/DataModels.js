@@ -1,15 +1,15 @@
 export const sizes = {
-  FONT_TITLE: 50,
+  FONT_TITLE: 60,
   FONT_MAX: 35,
-  FONT_MID: 20,
-  FONT_MIN: 15,
+  FONT_MID: 25,
+  FONT_MIN: 20,
 
   SPACES_MAX: 50,
   SPACES_MID: 25,
   SPACES_MIN: 10,
 
   MAX: 50,
-  MID: 25,
+  MID: 20,
   MIN: 10,
 
   PADDING_MAX: 10,
@@ -20,15 +20,24 @@ export const sizes = {
   MARGIN_MID: 10,
   MARGIN_MIN: 5,
 
-  BUTTON_WIDTH: 80,
+  BUTTON_WIDTH_SMALL: 150,
+  BUTTON_WIDTH_MEDIUM: 300,
 
+
+  BUTTON_HEIGHT_LARGE: 45,
+  BUTTON_HEIGHT_MEDIUM: 35,
+  BUTTON_HEIGHT_SMALL: 30,
+
+  HEADER_BAR: 60
 };
 
 export const colors = {
   primary: "#004AAD",
-  secondary: "#737373",
+  primary_hover: "#00367F",
+  primary_light: "#006DFF",
+  secondary: "#FFFFFF",
   tertiary: "#000000",
-  bg: "#FAF9F9",
+  bg: "#FFFFFF",
   text: "black",
   text2: "white",
   text3: "grey",
@@ -193,4 +202,6 @@ export const dropdown_options = {
 
   
 }
+
+
 

@@ -3,8 +3,65 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
 }
 
 .button:hover {
     cursor: pointer;
+    background-color: var(--primary-color-hover);
+}
+
+.border-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border: 1.5px solid ;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.border-button:hover {
+    cursor: pointer;
+    border-color: var(--primary-color-hover);
+    color: var(--primary-color-hover);
+}
+
+
+
+
+.button-black {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tertiary-color);
+    transition: all 0.3s ease;
+}
+
+.button-black:hover {
+    cursor: pointer;
+    background-color: var(--tertiary-color-hover);
+}
+
+.border-white-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border: 1.5px solid ;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.border-white-button:hover {
+    cursor: pointer;
+    border-color: var(--secondary-color-hover);
+    color: var(--secondary-color-hover);
+    transition: all 0.3s ease;
 }

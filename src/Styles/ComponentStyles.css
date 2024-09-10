@@ -50,3 +50,15 @@
     border-bottom: 1px solid grey;
     transition: border-bottom 0.5s ease-in;
 }
+
+
+
+.header-bar {
+    width: 100%;
+    background-color: var(--background-color);    
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+

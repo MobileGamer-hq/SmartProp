@@ -24,28 +24,61 @@ export function BeveledButton({
   placeholder,
   onClick,
   color = colors.primary,
-  width = sizes.BUTTON_WIDTH,
+  width = sizes.BUTTON_WIDTH_SMALL,
+  height = sizes.BUTTON_HEIGHT_MEDIUM,
   padding = sizes.PADDING_MIN,
   fontSize = sizes.FONT_MIN + 1,
-  margin = sizes.MARGIN_MIN 
+  margin = sizes.MARGIN_MIN,
+  className = "button"
 }) {
   return (
     <div
-      className="button"
+      className={className}
       style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
         width: width,
-        backgroundColor: color,
+        height: height,
         color: colors.text2,
-        padding: sizes.PADDING_MIN,
-        paddingRight: sizes.PADDING_MID + 5,
-        paddingLeft: sizes.PADDING_MID + 5,
-        borderRadius: sizes.MID,
+        borderRadius: sizes.MIN,
         fontSize: fontSize,
         margin: margin,
+        
       }}
       onClick={onClick}
     >
       {placeholder}
     </div>
   );
+}
+
+export function BorderBevelButton({
+  placeholder,
+  onClick,
+  color = colors.primary,
+  width = sizes.BUTTON_WIDTH_SMALL,
+  height = sizes.BUTTON_HEIGHT_MEDIUM,
+  padding = sizes.PADDING_MIN,
+  fontSize = sizes.FONT_MIN + 1,
+  margin = sizes.MARGIN_MIN,
+  className = "border-button"
+}){
+  return(
+    <div
+      className={className}
+      style={{
+        width: width,
+        height: height,
+        borderRadius: sizes.MIN,
+        fontSize: fontSize,
+        margin: margin,
+        
+      }}
+      onClick={onClick}
+    >
+      {placeholder}
+    </div>
+  )
 }

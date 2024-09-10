@@ -1,8 +1,11 @@
 :root {
-  --primary-color: #004aad;
-  --secondary-color: #737373;
+  --primary-color: #004AAD;
+  --primary-color-hover: #00367F;
+  --primary-color-light: #006DFF;
+  --secondary-color: white;
   --tertiary-color: #000000;
-  --background-color: #faf9f9;
+  --tertiary-color-hover:#202020;
+  --background-color: #fff;
   --text-color: black;
 
   --font-MAX: 50;
@@ -26,23 +29,7 @@
   --margin-MIN: 10;
 }
 
-.App {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--background-color);
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: inline-block;
-}
-
-header {
-  width: 100%;
-}
-
-footer {
-  width: 100%;
-}
+} */
 

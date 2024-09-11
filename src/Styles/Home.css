@@ -6,6 +6,9 @@ section {
 
 .buyers-home-top {
     background-image: url("../Images/Top-Image-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,12 +16,18 @@ section {
 }
 
 .buyers-featured-homes {
-    background-color: var(--primary-color);
+    background-color: var(--background-color2);
     /* padding: 20px; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    
+}
+
+.featured-container {
+    align-self: center;
+    width: 80%;
 }
 
 .profile-icon {
@@ -36,6 +45,7 @@ section {
 
 .profile-icon:hover {
     background-color: var(--primary-color-hover);
+    cursor: pointer;
 }
 
 #profile-icon {

@@ -1,0 +1,74 @@
+.mid-list-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-gap: 20px; /* Spacing between grid items */
+  padding: 10px;
+  /* align content and items in this container to the center */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mid-list-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.property {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--background-color);
+  /* border-radius: 10px; */
+  transition: border-bottom 0.5s ease-in-out;
+}
+
+.property:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.property-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.property-info-mini {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#property-info-icon {
+  /* color: var(--primary-color); */
+  font-size: 1rem;
+}
+
+#property-heart-icon {
+  font-size: 1.3rem;
+}
+
+#property-heart-icon:hover {
+  color: red;
+  cursor: pointer;
+}
+
+
+.mini-list-container {
+  width: 100%;
+  height: 100px; /* Set a fixed height for 1 row */
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 equal columns */
+  grid-template-rows: 1fr; /* Only 1 row */
+  grid-gap: 20px; /* Spacing between grid items */
+  padding: 10px;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  background-color: white;
+}

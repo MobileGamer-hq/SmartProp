@@ -9,6 +9,9 @@ section {
 
 .welcome-top {
   background-image: url("../Images/Top-Image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .welcome-about {

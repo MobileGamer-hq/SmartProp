@@ -25,7 +25,7 @@ function LogIn() {
             signIn(email, password);
             navigate("/")
           }}/>
-          <FlatButton placeholder={"Don't Have an Account, Sign Up"} onClick={() => navigate("/sign-up")}/>
+          <FlatButton placeholder={"Don't Have an Account, Sign Up"} onClick={() => navigate("/sign-up")} width={sizes.BUTTON_WIDTH_MEDIUM}/>
         </div>
       </div>
     </div>

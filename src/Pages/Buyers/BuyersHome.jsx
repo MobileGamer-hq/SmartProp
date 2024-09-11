@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import "../Styles/Home.css"
-import SearchBar from '../Components/SearchBar';
-import { colors, sizes } from '../Data/DataModels';
+import "../../Styles/Home.css"
+import SearchBar from '../../Components/SearchBar';
+import { colors, sizes } from '../../Data/DataModels';
 import { useNavigate } from 'react-router-dom';
-import { BorderBevelButton, FlatButton } from '../Components/Buttons';
+import { BorderBevelButton, FlatButton } from '../../Components/Buttons';
 import { IoIosArrowForward } from 'react-icons/io';
 import { FaUser } from 'react-icons/fa';
-
+import { MidPropertyList } from '../../Components/Property';
 
 
 function BuyersHome({ }) {
@@ -16,7 +16,7 @@ function BuyersHome({ }) {
     <div className='buyers-home'>
 
       <section className='buyers-home-top'>
-        <div style={{ fontSize: 80, color: colors.secondary, textWrap: "wrap", width: 700, textAlign: "center", marginBottom: 20 }}>Find Your Dream HOME</div>
+        <div style={{ fontSize: 80, color: colors.secondary, textWrap: "wrap", width: "50%", textAlign: "center", marginBottom: 20 }}>Find Your Dream HOME</div>
         <SearchBar width="60%" text="Search For Properties" border={true} value={searchTerm} onSearchBarChange={(input) => setSearchTerm(input)} />
       </section>
       <section className='buyers-featured-homes'>
@@ -26,7 +26,7 @@ function BuyersHome({ }) {
         </div>
 
         <div className='featured-container'>
-
+          <MidPropertyList/>
         </div>
         <BorderBevelButton className='border-white-button' placeholder={"See More"} fontSize={sizes.BUTTON_FONT_SMALL} margin={sizes.MARGIN_MAX} align={"flex-end"}/>
       </section>

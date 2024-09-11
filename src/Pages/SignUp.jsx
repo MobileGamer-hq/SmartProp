@@ -32,15 +32,11 @@ function SignUp() {
             signUp(fullName, email, password, role)
             navigate("/")
           }}/>
-          <FlatButton placeholder={"Already Have an Account, Log In"} onClick={() => navigate("/log-in")} />
+          <FlatButton placeholder={"Already Have an Account, Log In"} onClick={() => navigate("/log-in")} width={sizes.BUTTON_WIDTH_MEDIUM} />
         </div>
       </div>
     </div>
   )
-}
-
-function Fields({ placeholder, value, setValue }) {
-
 }
 
 export default SignUp;

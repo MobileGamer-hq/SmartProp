@@ -17,9 +17,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 //Pages
-import BuyersHome from "./Pages/BuyersHome";
+
 import Profile from "./Pages/Profile";
-import Dashboard from "./Pages/Dashboard";
+
 import LogIn from "./Pages/LogIn";
 import SignUp from "./Pages/SignUp";
 import Search from "./Pages/Search";
@@ -28,6 +28,12 @@ import WatchList from "./Pages/WatchList";
 import Welcome from "./Pages/Welcome";
 import LearnMore from "./Pages/LearnMore";
 import Loading from "./Pages/Loading";
+
+//
+import BuyersHome from "./Pages/Buyers/BuyersHome";
+
+//
+import Dashboard from "./Pages/Sellers/Dashboard";
 
 function App() {
   const navigate = useNavigate();

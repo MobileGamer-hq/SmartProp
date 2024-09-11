@@ -38,7 +38,7 @@ function Welcome() {
       <section className="welcome-top">
         <HeaderBar showButton={true} getStarted={getStarted} logIn={logIn}/>
         <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ fontSize: sizes.FONT_TITLE, color: colors.secondary, textWrap: "wrap", width: 900, textAlign: "center" }}>Enjoy The Experience of Finding your New Home</div>
+          <div style={{ fontSize: sizes.FONT_TITLE, color: colors.secondary, textWrap: "wrap", width: "60%", textAlign: "center" }}>Enjoy The Experience of Finding your New Home</div>
           <BeveledButton placeholder={"Get Started"} fontSize={sizes.BUTTON_FONT_LARGE} height={sizes.BUTTON_HEIGHT_LARGE} width={sizes.BUTTON_WIDTH_MEDIUM} onClick={getStarted}/>
         </div>
       </section>

@@ -2,20 +2,18 @@ import React from "react";
 import { colors, sizes } from "../Data/DataModels";
 import "../Styles/ButtonStyles.css";
 
-export function FlatButton({ placeholder, onClick, color, size = sizes.BUTTON_FONT_SMALL }) {
+export function FlatButton({ placeholder, onClick, color, size = sizes.BUTTON_FONT_SMALL, className = "flat-button", width = sizes.BUTTON_WIDTH_SMALL }) {
   return (
-    <div>
-      <div
-        className="flat-button"
-        style={{
-          color: color,
-          padding: sizes.PADDING_MIN,
-          fontSize: size,
-        }}
-        onClick={onClick}
-      >
-        {placeholder}
-      </div>
+    <div
+      className={className}
+      style={{
+        padding: sizes.PADDING_MIN,
+        fontSize: size,
+        width: width
+      }}
+      onClick={onClick}
+    >
+      {placeholder}
     </div>
   );
 }
@@ -45,7 +43,7 @@ export function BeveledButton({
         borderRadius: sizes.MIN,
         fontSize: fontSize,
         margin: margin,
-        
+
       }}
       onClick={onClick}
     >
@@ -63,9 +61,10 @@ export function BorderBevelButton({
   padding = sizes.PADDING_MIN,
   fontSize = sizes.BUTTON_FONT_MEDIUM,
   margin = sizes.MARGIN_MIN,
-  className = "border-button"
-}){
-  return(
+  className = "border-button",
+  align
+}) {
+  return (
     <div
       className={className}
       style={{
@@ -74,7 +73,8 @@ export function BorderBevelButton({
         borderRadius: sizes.MIN,
         fontSize: fontSize,
         margin: margin,
-        
+        alignSelf: align
+
       }}
       onClick={onClick}
     >

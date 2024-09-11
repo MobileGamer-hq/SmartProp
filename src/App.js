@@ -27,10 +27,11 @@ import ViewProperty from "./Pages/ViewProperty";
 import WatchList from "./Pages/WatchList";
 import Welcome from "./Pages/Welcome";
 import LearnMore from "./Pages/LearnMore";
+import Loading from "./Pages/Loading";
 
 function App() {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [loadingMessage, setLoadingMessage] = useState("Authenticating...");
   const [isLogIn, setIsLogIn] = useState(false);
 
@@ -77,7 +78,7 @@ function App() {
   }, [userId]);
 
   if (isLoading) {
-    return <div className="App">Loading.... Authenticating User</div>;
+    return <Loading/>;
   } else {
     return (
       <div>

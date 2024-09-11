@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {sizes, colors} from "../Data/DataModels";
 import "../Styles/ComponentStyles.css"
+import { IoSearch } from 'react-icons/io5';
+import Logo from "./Logo"
 
 function SearchBar({
     color = {
@@ -15,7 +17,6 @@ function SearchBar({
     margin = sizes.MARGIN_MAX,
     onSearchBarChange,
     onKeyDown = () => { },
-    align = 'center',
     value = '',
     wrap = false,
     border = false,
@@ -41,28 +42,33 @@ function SearchBar({
                 fontSize: size,
                 backgroundColor: colors.secondary,
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: align,
-                justifyContent: 'center',
-                padding: sizes.PADDING_MID,
-                borderRadius: sizes.MID,
+                flexDirection: 'row',
+                alignItems: "center",
+                justifyContent: 'space-between',
+                padding: sizes.PADDING_MAX,
+                borderRadius: sizes.MAX,
             }}
         >
+            {/* <div>
+                <Logo size={sizes.HEADER_BAR}/>
+            </div> */}
             <input
+                className='search-input'
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    alignItems: 'flex-start',
+                    justifyContent: 'flex-start',
                     backgroundColor: 'transparent',
                     border: 'none',
                     outline: 'none',
                     fontSize: size,
                     color: color.text,
-                    textAlign: align, // Center the text inside the input
+                    textAlign: "flex-start", // Center the text inside the input
                     whiteSpace: 'pre-wrap',
                     flexWrap: 'wrap',
-
+                    width: "90%",
+                    
                 }}
                 type={type}
                 placeholder={text}
@@ -74,6 +80,7 @@ function SearchBar({
                 onFocus={handleInputFocus}
                 onBlur={handleInputBlur}
             />
+            <IoSearch id='search-icon'/>
         </div>
     );
 }

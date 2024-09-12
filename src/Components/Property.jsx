@@ -4,10 +4,12 @@ import proper_image from "../Images/property-example.png"
 import {sizes, colors} from '../Data/DataModels'
 import { IoBedOutline, IoCarSportOutline, IoHeart, IoHeartOutline } from 'react-icons/io5';
 import { LuBath } from 'react-icons/lu';
+import { useNavigate } from 'react-router-dom';
 
 
 const items = [
     'Item 1', 'Item 2', 'Item 3',
+    'Item 4', 'Item 5', 'Item 6',
     'Item 4', 'Item 5', 'Item 6'
 ];
 
@@ -21,7 +23,8 @@ export function MiniPropertyList({properties}) {
   )
 }
 
-export function MidPropertyList() {
+export function MidPropertyList({properties}) {
+  
     return (
       <div className='mid-list-container'>
         {items.map((item, index) => (
@@ -33,14 +36,16 @@ export function MidPropertyList() {
 
 
 function Property({property}) {
+  const navigate = useNavigate()
+  let link = `view-property/${12}`
   return (
-    <div className='property'>
-      <img src={proper_image} alt={property} style={{width: 150, height: 150, margin: 20}}/>
+    <div className='property' onClick={() => navigate(link)}>
+      <img src={proper_image} alt={property} style={{width: 150, height: 150}}/>
       <div className='property-info'>
         <div>
           <div style={{fontSize: sizes.FONT_MID}}>2 Bedroom Flat</div>
           <div style={{fontSize: sizes.FONT_MIN}}>Lekki</div>
-        </div>
+        </div> 
         <div style={{display: 'flex', flexDirection: "row", width: "100%", justifyContent: "space-between", padding: 10}}>
           <div className='property-info-mini'>
             <IoCarSportOutline id='property-info-icon'/>

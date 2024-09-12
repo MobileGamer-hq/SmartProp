@@ -16,7 +16,7 @@ function BuyersHome({ }) {
     <div className='buyers-home'>
 
       <section className='buyers-home-top'>
-        <div style={{ fontSize: 80, color: colors.secondary, textWrap: "wrap", width: "50%", textAlign: "center", marginBottom: 20 }}>Find Your Dream HOME</div>
+        <div style={{ fontSize: sizes.FONT_TITLE, color: colors.secondary, textWrap: "wrap", width: "50%", textAlign: "center", marginBottom: 20 }}>Find Your Dream HOME</div>
         <SearchBar width="60%" text="Search For Properties" border={true} value={searchTerm} onSearchBarChange={(input) => setSearchTerm(input)} />
       </section>
       <section className='buyers-featured-homes'>

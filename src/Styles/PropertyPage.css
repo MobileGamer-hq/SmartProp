@@ -1,0 +1,51 @@
+/* Global styles for the property page */
+.property-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Main property view section */
+.view-property {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* Container for property information and image */
+.property-info-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Property image section */
+.property-image {
+    height: 40%;
+    width: 100%;
+    background-color: aqua;
+}
+
+/* Property details section */
+.view-property-info {
+    height: 60%;
+    width: 100%;
+    background-color: blue;
+}
+
+/* Seller information section */
+.seller-info {
+    width: 20%;
+    height: 100%;
+    background-color: seagreen;
+}
+
+/* Analysis section */
+.analysis {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: var(--primary-color);
+}

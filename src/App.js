@@ -108,10 +108,10 @@ function App() {
                 path={userRole === "seller" ? "/" : "/dashboard"}
                 element={<Dashboard />}
               />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/view-property" element={<ViewProperty />} />
-              <Route path="/watchlist" element={<WatchList />} />
+              <Route path="/profile/:id" element={<Profile />} />
+              <Route path="/search/:term" element={<Search />} />
+              <Route path="/view-property/:id" element={<ViewProperty />} />
+              <Route path="/watchlist/:id" element={<WatchList />} />
             </Routes>
           </div>
         )}

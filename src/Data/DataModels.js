@@ -1,5 +1,5 @@
 export const sizes = {
-  FONT_TITLE: 60,
+  FONT_TITLE: 80,
   FONT_MAX: 35,
   FONT_MID: 20,
   FONT_MIN: 15,

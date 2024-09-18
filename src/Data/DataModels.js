@@ -23,7 +23,6 @@ export const sizes = {
   BUTTON_WIDTH_SMALL: 150,
   BUTTON_WIDTH_MEDIUM: 300,
 
-
   BUTTON_HEIGHT_LARGE: 45,
   BUTTON_HEIGHT_MEDIUM: 35,
   BUTTON_HEIGHT_SMALL: 30,
@@ -32,7 +31,7 @@ export const sizes = {
   BUTTON_FONT_MEDIUM: 18,
   BUTTON_FONT_SMALL: 15,
 
-  HEADER_BAR: 60
+  HEADER_BAR: 60,
 };
 
 export const colors = {
@@ -47,7 +46,6 @@ export const colors = {
   text3: "grey",
 };
 
-
 //Data Models
 export const User = {
   username: "",
@@ -60,35 +58,51 @@ export const User = {
   role: "",
   roleData: {},
   contact_info: {
-    phone_number: "",
+    contact_phone_number: "",
+    contact_email: "",
     address: "",
   },
   verification: {
     NIN: "",
     BVN: "",
+    phone_number: "",
   },
 };
 
 export const Property = {
-  location: "",
   id: "",
+  seller: "",
   price: 0,
-  colors: [],
-  images: [],
   type: "",
-  size: {
-    squ_foot: 0,
-    lot_size: 0,
-  },
-  rooms: {
-    bedrooms: 0,
-    kitchen: 0,
-    living_room: 0,
+  description: {
+    colors: [],
+    pictures: [],
+    tags: [],
   },
   verification: {
     verified: false,
     documents: [],
     verification_date: "",
+  },
+  legal_description: "",
+  location: {
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    inside_estate: false,
+    estate: "",
+  },
+  size: {
+    squ_foot: 0,
+    lot_size: 0,
+    floors: 0,
+  },
+  rooms: {
+    bedrooms: 0,
+    bathrooms: 0,
+    kitchen: 0,
+    living_room: 0,
   },
   miscellaneous: [],
   amenities: {
@@ -97,22 +111,47 @@ export const Property = {
     garage: false,
     laundry_room: false,
   },
-  legal_description: "",
+  offers: [],
   note: "",
-  point: 0
 };
 
 export const Search = {
+  search_term: "",
+  filter: {},
+  results: [],
+};
+
+export const Search_Filter = {
   budget: 0,
-  property_type: "",
-  bedroom_number: 0,
-  bathroom_number: 0,
+  property_type: "Any",
+  bedrooms: 1,
+  bathrooms: 1,
+  kitchens: 1,
+  living_rooms: 1,
+
   inside_estate: false,
+  smart_home: true,
   square_footage: 0,
-  location: "",
+  city: "",
+  state: "",
+  estate: "",
+
   amenities: [],
-  results: []
-}
+};
+
+export const Search_Priority = {
+  price: 5,
+  bedroom_no: 4,
+  bathroom_no: 4,
+  living_room_no: 3,
+  kitchen_no: 2,
+  square_footage: 4,
+
+  property_type: 5,
+  location: 4,
+  inside_estate: 5,
+  amenities: 3,
+};
 
 //Types of users
 export const Seller = {
@@ -120,7 +159,7 @@ export const Seller = {
   ads: [],
   rank: "",
   followers: [],
-  rating: ""
+  rating: "",
 };
 
 export const Buyer = {
@@ -138,12 +177,10 @@ export const Buyer = {
     amenities: 0,
   },
   search_filter: {},
-  suggested: []
+  suggested: [],
 };
 
 export const Admin = {};
-
-
 
 //
 export const Transaction = {
@@ -177,35 +214,80 @@ export const documents = {
   path: "",
 };
 
-
 //
 export const dropdown_options = {
   user_role: [
-    {label: "Buyer", value: "buyer"},
-    {label: "Seller", value: "seller"},
+    { label: "Buyer", value: "buyer" },
+    { label: "Seller", value: "seller" },
   ],
 
   property_type: [
-    {label: "Flats", value: "flats"},
-    {label: "Duplex", value: "duplex"},
-    {label: "Mansion", value: "mansion"},
-    {label: "Three Story Buiilding", value: "3-story"}
+    { label: "Flats", value: "flats" },
+    { label: "Duplex", value: "duplex" },
+    { label: "Mansion", value: "mansion" },
+    { label: "Three Story Buiilding", value: "3-story" },
   ],
 
   boolean: [
-    {label: "True", value: "true"},
-    {label: "False", value: "false"},
+    { label: "True", value: "true" },
+    { label: "False", value: "false" },
   ],
 
   purpose: [
-    {label: "Are you looking for a place to call home", value: "true"},
-    {label: "Are you looking for, to resell", value: "true"},
-    {label: "Are you looking for a rental property", value: "true"},
-    {label: "Are you looking for investment", value: "true"},
-  ]
+    { label: "Are you looking for a place to call home", value: "true" },
+    { label: "Are you looking for, to resell", value: "true" },
+    { label: "Are you looking for a rental property", value: "true" },
+    { label: "Are you looking for investment", value: "true" },
+  ],
+};
 
-  
-}
-
-
-
+export const amenities = [
+  "Swimming Pool",
+  "Gym",
+  "Home Office",
+  "Security System",
+  "Gated Community Access",
+  "High-Speed Internet",
+  "Backup Generator",
+  "Solar Power",
+  "Smart Home Automation",
+  "Water Filtration System",
+  "Outdoor Kitchen",
+  "Fire Pit",
+  "Walk-in Closets",
+  "Home Theater",
+  "Wine Cellar",
+  "In-Unit Laundry",
+  "Heated Floors",
+  "Sauna",
+  "Jacuzzi",
+  "Balcony",
+  "Garden",
+  "Game Room",
+  "Elevator",
+  "Private Rooftop Access",
+  "Air Conditioning",
+  "Fireplace",
+  "Guest House",
+  "Library",
+  "Tennis Court",
+  "Pool",
+  "Spa",
+  "Outdoor Shower",
+  "Fitness Center",
+  "Basketball Court",
+  "Barbecue Area",
+  "Pet Friendly",
+  "Children's Play Area",
+  "Clubhouse",
+  "Concierge",
+  "Storage",
+  "Waterfront",
+  "Private Beach",
+  "Private Island",
+  "Private Jetty",
+  "Fully Furnished",
+  "Partially Furnished",
+  "Unfurnished",
+  "Furnished",
+];

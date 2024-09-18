@@ -20,7 +20,8 @@ function SearchBar({
     value = '',
     wrap = false,
     border = false,
-    message
+    message,
+    onClick
 }) {
 
     const [active, setActive] = useState(false)
@@ -80,7 +81,7 @@ function SearchBar({
                 onFocus={handleInputFocus}
                 onBlur={handleInputBlur}
             />
-            <IoSearch id='search-icon'/>
+            <IoSearch id='search-icon' onClick={onClick}/>
         </div>
     );
 }

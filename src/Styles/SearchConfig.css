@@ -1,0 +1,102 @@
+.set-filter {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+.filter-parameters-container {
+    width: 350px;
+    border: 1px  solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    transition: all 0.3s ease-in;
+    
+}
+
+.filter-parameters-container-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fiter-input-number {
+    background-color: var(--primary-color);
+}
+
+.fiter-input-number:hover {
+    background-color: var(--primary-color2);
+    cursor: pointer;
+}
+
+.amenities-list-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.amenities-list {
+    border: 1px  solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 50px;
+}
+
+.amenities-list-item {
+    display: flex;                   /* Use flexbox to align items */
+    align-items: center;              /* Vertically center the items */
+    justify-content: space-between;   /* Space between text and icon */
+    background-color: var(--primary-color-hover);
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 35px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+#input-arrow-icons {
+    font-size: 1rem;
+}
+
+#input-arrow-icons:hover {
+    color: var(--secondary-color-hover);
+}
+
+.about-filter-algorithm-priorities {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.about-filter-algorithm-priorities-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+}
+
+.about-item {
+    
+}
+
+.about-item-title {
+    padding-bottom: 10px;
+    border-bottom: 1px  solid white;
+}

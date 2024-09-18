@@ -1,7 +1,9 @@
 :root {
   --primary-color: #004AAD;
   --primary-color-hover: #00367F;
-  --primary-color2: #003d8b;
+  --primary-color-transparent: #004bad60;
+  --primary-color-hover-transparent: #00377fa5 ;
+  --primary-color2: #236BCC;
   --secondary-color: white;
   --secondary-color-hover: rgb(141, 141, 141);
   --tertiary-color: #000000;
@@ -36,4 +38,38 @@
 /* ::-webkit-scrollbar {
   display: inline-block;
 } */
+
+/* For Chrome, Safari, and Edge */
+ul::-webkit-scrollbar {
+  width: 8px;               /* Adjust the width of the scrollbar */
+}
+
+ul::-webkit-scrollbar-track {
+  background: transparent;   /* Make the scrollbar track (background) transparent */
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #888;    /* Set the color of the scrollbar thumb (the draggable part) */
+  border-radius: 10px;       /* Optional: rounded scrollbar */
+  border: 2px solid transparent; /* To add space around the scrollbar thumb */
+}
+
+/* For Firefox */
+ul {
+  scrollbar-width: thin;        /* Makes the scrollbar thinner */
+  scrollbar-color: #888 transparent; /* Thumb color and track color (transparent) */
+}
+
+/* Remove background of spinner arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+
+/* For Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 

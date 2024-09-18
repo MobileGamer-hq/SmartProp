@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 const items = [
     'Item 1', 'Item 2', 'Item 3',
     'Item 4', 'Item 5', 'Item 6',
-    'Item 4', 'Item 5', 'Item 6'
 ];
 
 export function MiniPropertyList({properties}) {
@@ -40,7 +39,7 @@ function Property({property}) {
   let link = `view-property/${12}`
   return (
     <div className='property' onClick={() => navigate(link)}>
-      <img src={proper_image} alt={property} style={{width: 150, height: 150}}/>
+      <img src={proper_image} alt={property} style={{width: 180, height: 180, margin: sizes.MARGIN_MID, borderRadius: 5}}/>
       <div className='property-info'>
         <div>
           <div style={{fontSize: sizes.FONT_MID}}>2 Bedroom Flat</div>
@@ -60,7 +59,7 @@ function Property({property}) {
             <div style={{fontSize: sizes.FONT_MIN-3, marginLeft: 5}}>{2}</div>
           </div>
         </div>
-        <div id='strike'/>
+        <div style={{height: 30, width: "100%"}}/>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #000', paddingTop: 10}}>
           <IoHeartOutline id='property-heart-icon'/>
           <div style={{fontSize: sizes.FONT_MID-3}}>₦50,000,000</div>

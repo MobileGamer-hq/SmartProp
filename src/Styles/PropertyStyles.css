@@ -27,14 +27,15 @@
   width: fit-content;
   /* border-radius: 10px; */
   transition:  all 0.3s ease-in-out;
-  border-radius: 20px;
-  box-shadow: 10px 10px 10px #0000004d;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #012c65a3;
 }
 
 .property:hover {
-  scale: 1.01;
+  /* scale: 1.01; */
   cursor: pointer;
-  background-color: var(--background-color);
+  background-color: var(--primary-color2);
+  color: var(--secondary-color);
 }
 
 .property-info {
@@ -52,6 +53,7 @@
   align-items: center;
   justify-content: center;
 }
+
 
 #property-info-icon {
   /* color: var(--primary-color); */

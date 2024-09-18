@@ -1,87 +1,187 @@
 .dropdown {
-    position: relative;
-    width: 100px;
-    font-family: Arial,  sans-serif;
-    color: black;
+  position: relative;
+  font-family: Arial, sans-serif;
+  color: black;
 }
 
 .dropdown-header {
-    /* background-color: #f0f0f0; */
-    /* border: 1px solid #ccc; */
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* background-color: #f0f0f0; */
+  /* border: 1px solid #ccc; */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dropdown-header-active {
-    /* background-color: #f0f0f0; */
-    /* border: 1px solid #ccc; */
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: border-bottom 0.5s ease-in;
-    padding-bottom: 10px;
+  /* background-color: #f0f0f0; */
+  /* border: 1px solid #ccc; */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-bottom 0.5s ease-in;
+  padding-bottom: 10px;
 }
 
 .dropdown-list {
-    position: absolute;
-    width: 100%;
-    /* background-color: #fff; */
-    /* border: 1px solid #ccc;
+  position: absolute;
+  width: 100%;
+  /* background-color: #fff; */
+  /* border: 1px solid #ccc;
     /* border-top: none; */
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    max-height: 100px;
-    overflow-y: auto;
-    transition: border-bottom 0.5s ease-in;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 100px;
+  overflow-y: auto;
+  transition: border-bottom 0.5s ease-in;
 }
 
 .dropdown-item {
-    padding: 10px;
+  padding: 10px;
 }
 
 .dropdown-item:hover {
-    cursor: pointer;
-    background-color: #f0f0f0;
+  cursor: pointer;
+  background-color: #f0f0f0;
 }
 
 .side-bar {
-    
 }
 
 .textInput {
-    border-bottom: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .textInput-active {
-    border-bottom: 1px solid grey;
-    transition: border-bottom 0.5s ease-in;
+  border-bottom: 1px solid grey;
+  transition: border-bottom 0.5s ease-in;
 }
 
-
-
 .header-bar {
-    width: 100%;
-    background-color: var(--background-color);    
+  width: 100%;
+  background-color: var(--background-color);
 }
 
 .logo:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .search-input {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 #search-icon {
-    font-size: 2rem;
-    color: grey ;
-    margin-right: 10px;
+  font-size: 2rem;
+  color: grey;
+  margin-right: 10px;
 }
 
 #search-icon:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+
+  border-radius: 5px;
+  outline: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  height: 15px;
+  /* background: linear-gradient(to right, blue 0%, blue var(--value),yellow var(--value), yellow  100% ); */
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+}
+
+.checkbox-title {
+  margin-left: 10px;
+  font-size: 16px;
+  color: var(--secondary-color);
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+/* Hide the default checkbox */
+.custom-checkbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Create a custom checkmark */
+.custom-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Style the checkmark when the checkbox is checked */
+.custom-checkbox input:checked + .checkmark {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Add the tick mark */
+.custom-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked + .checkmark:after {
+  display: block;
+}
+
+/* Create the tick/indicator (checkmark) */
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }

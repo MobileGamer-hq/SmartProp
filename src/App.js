@@ -31,9 +31,11 @@ import Loading from "./Pages/Loading";
 
 //
 import BuyersHome from "./Pages/Buyers/BuyersHome";
+import SearchConfig from "./Pages/SearchConfig";
 
 //
 import Dashboard from "./Pages/Sellers/Dashboard";
+
 
 function App() {
   const navigate = useNavigate();
@@ -46,6 +48,8 @@ function App() {
   const [userId, setUserId] = useState(null);
 
   const [userRole, setUserRole] = useState("buyer");
+
+
 
   useEffect(() => {
     const checkAuth = onAuthStateChanged(auth, (user) => {
@@ -102,13 +106,14 @@ function App() {
             <Routes>
               <Route
                 path={userRole === "buyer" ? "/" : "/buyers-home"}
-                element={<BuyersHome />}
+                element={<BuyersHome id={userId}/>}
               />
               <Route
                 path={userRole === "seller" ? "/" : "/dashboard"}
                 element={<Dashboard />}
               />
               <Route path="/profile/:id" element={<Profile />} />
+              <Route path="/search-config/:id" element={<SearchConfig />} />
               <Route path="/search/:term" element={<Search />} />
               <Route path="/view-property/:id" element={<ViewProperty />} />
               <Route path="/watchlist/:id" element={<WatchList />} />

@@ -31,10 +31,11 @@ import Loading from "./Pages/Loading";
 
 //
 import BuyersHome from "./Pages/Buyers/BuyersHome";
-import SearchConfig from "./Pages/SearchConfig";
+import SearchConfig from "./Pages/Buyers/SearchConfig";
 
 //
 import Dashboard from "./Pages/Sellers/Dashboard";
+import { fetchUserById } from "./Data/Server";
 
 
 function App() {
@@ -60,14 +61,15 @@ function App() {
         const uid = user.uid;
         setUserId(uid);
         setIsLogIn(true);
+        setUser(fetchUserById(uid));
         //console.log(userId)
 
-        onSnapshot(doc(db, "Users", uid), (doc) => {
-          setLoadingMessage("Getting User Data...");
-          setUser(doc.data());
+        // onSnapshot(doc(db, "Users", uid), (doc) => {
+        //   setLoadingMessage("Getting User Data...");
+        //   setUser(doc.data());
 
-          //console.log("Current data: ", doc.data());
-        });
+        //   //console.log("Current data: ", doc.data());
+        // });
         // ...
       } else {
         // User is signed out
@@ -78,13 +80,14 @@ function App() {
       setIsLoading(false);
     });
 
-    const usersSub = onSnapshot(collection(db, "Users"), (querySnapshot) => {
-      const data = [];
-      querySnapshot.forEach((doc) => {
-        data.push(doc.data());
-      });
-      setUsers(data);
-    });
+    // const usersSub = onSnapshot(collection(db, "Users"), (querySnapshot) => {
+    //   const data = [];
+    //   querySnapshot.forEach((doc) => {
+    //     data.push(doc.data());
+    //   });
+    //   setUsers(data);
+    //   console.log(users);
+    // });
   }, [userId]);
 
   if (isLoading) {

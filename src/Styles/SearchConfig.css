@@ -45,6 +45,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 26px;
 }
 
 .amenities-list {
@@ -55,18 +56,46 @@
     flex-wrap: wrap;
     width: 100%;
     min-height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    
 }
 
 .amenities-list-item {
     display: flex;                   /* Use flexbox to align items */
     align-items: center;              /* Vertically center the items */
     justify-content: space-between;   /* Space between text and icon */
-    background-color: var(--primary-color-hover);
+    background-color: var(--primary-color);
     padding-right: 20px;
     padding-left: 20px;
     height: 35px;
     margin: 5px;
     border-radius: 20px;
+    transition: all 0.3s ease-in;
+}
+
+.amenities-list-item:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.colors-list-item {
+    display: flex;                   /* Use flexbox to align items */
+    align-items: center;              /* Vertically center the items */
+    justify-content: center; 
+    height: 60;
+    width: 60;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+#cancle-icon {
+    font-size: 1rem;
+    transition: all 0.3s ease-in;
+}
+
+#cancle-icon:hover {
+    cursor: pointer;
+    color: var(--secondary-color-hover);
 }
 
 #input-arrow-icons {
@@ -74,6 +103,7 @@
 }
 
 #input-arrow-icons:hover {
+    cursor: pointer;
     color: var(--secondary-color-hover);
 }
 

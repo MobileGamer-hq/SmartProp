@@ -1,26 +1,44 @@
-import React, { useState } from 'react'
-import Slider from '../Components/Slider'
-import { amenities, colors, dropdown_options, Search_Filter, Search_Priority, sizes } from '../Data/DataModels'
-import SearchBar from '../Components/SearchBar'
+import React, { useEffect, useState } from 'react'
+import Slider from '../../Components/Slider'
+import { amenities, colors, dropdown_options, listOfColors, Search, Search_Filter, Search_Priority, sizes, User } from '../../Data/DataModels'
+import SearchBar from '../../Components/SearchBar'
 
-import "../Styles/SearchConfig.css"
-import { generateTerms } from '../Data/SearchManager'
-import SelectInput from '../Components/SelectInput'
+import "../../Styles/SearchConfig.css"
+import { generateTerms } from '../../Data/SearchManager'
+import SelectInput from '../../Components/SelectInput'
 import { MdOutlineCancel } from 'react-icons/md'
-import Checkbox from '../Components/Checkbox'
-import { BorderBevelButton } from '../Components/Buttons'
+import Checkbox from '../../Components/Checkbox'
+import { BorderBevelButton } from '../../Components/Buttons'
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
+import { fetchUserById, handleUpdate } from '../../Data/Server'
+import { useParams } from 'react-router-dom'
 
 
 
 
 function SearchConfig() {
+  const { id } = useParams();
   const [searchTerm, setSearchTerm] = useState("")
   const [terms, setTerms] = useState([])
   const [filter, setFilter] = useState(Search_Filter)
   const [priority, setPriority] = useState(Search_Priority)
 
-  const [amenitiesList, setamenitiesList] = useState(amenities)
+  const [amenitiesList, setAmenitiesList] = useState(amenities)
+  const [colorsList, setColorsList] = useState(listOfColors)
+
+
+  useEffect(() => {
+    //get the user search config from firebase
+     fetchUserById(id).then((data) => {
+        setPriority(data.roleData.priority);
+        console.log(data);
+
+        if (data.roleData.search_filter == {}) {
+          setFilter(Search_Filter);
+        }
+      });
+
+  }, [])
 
 
   const deriveTerms = () => {
@@ -53,10 +71,10 @@ function SearchConfig() {
       setFilter(temp)
 
       //remove the value from the list of options
-      const tempOptions = [...amenitiesList]
+      const tempOptions = key === "amenities" ? [...amenitiesList] : [...colorsList]
       const index = tempOptions.indexOf(value)
       tempOptions.splice(index, 1)
-      setamenitiesList(tempOptions)
+      key === "amenities" ? setAmenitiesList(tempOptions) : setColorsList(tempOptions)
     }
 
 
@@ -70,7 +88,11 @@ function SearchConfig() {
   }
 
   const UploadFilter = () => {
-
+    //upload the filter to firebase
+    console.log(filter, priority)
+    handleUpdate(id, { roleData: { search_filter: filter, priority: priority } }).then(() => {
+      console.log("Filter Updated")
+    })
   }
 
 
@@ -103,7 +125,7 @@ function SearchConfig() {
             <div className='filter-parameters-container'>
 
               <div>
-
+                <Checkbox title={'Does the color of your Home matter'} defaultChecked={filter.colors_matter} onChange={(input) => changeValue("colors_matter", input)} />
                 <Checkbox title={'Should be in an Estate'} defaultChecked={filter.inside_estate} onChange={(input) => changeValue("inside_estate", input)} />
                 <Checkbox title={'Should be a Smart Home'} defaultChecked={filter.smart_home} onChange={(input) => changeValue("smart_home", input)} />
               </div>
@@ -111,10 +133,22 @@ function SearchConfig() {
               <div className='amenities-list-container'>
                 <div style={{ fontSize: sizes.FONT_MID, color: colors.text2, textWrap: "wrap", textAlign: "center", margin: sizes.MARGIN_MIN }}>Add Your Amenities</div>
                 <ul className='amenities-list'>
-                  {filter.amenities.map((amenity, index) => <div key={index} className='amenities-list-item'><div style={{ fontSize: sizes.FONT_MIN, marginRight: 5 }}>{amenity}</div><MdOutlineCancel onClick={() => removeValue("amenities", amenity)} /></div>)}
+                  {filter.amenities.map((amenity, index) => <div key={index} className='amenities-list-item'><div style={{ fontSize: sizes.FONT_MIN, marginRight: 5 }}>{amenity}</div><MdOutlineCancel id="cancle-icon" onClick={() => removeValue("amenities", amenity)} /></div>)}
                 </ul>
-                <SelectInput options={amenitiesList} placeholder={"Type the amenity you are lookibng for "} onClick={(input) => addValue('amenities', input)} />
+                <SelectInput options={amenitiesList} placeholder={"Type the amenity you are looking for "} onClick={(input) => addValue('amenities', input)} />
               </div>
+
+              {
+                filter.colors_matter ? (
+                  <div className='amenities-list-container'>
+                    <div style={{ fontSize: sizes.FONT_MID, color: colors.text2, textWrap: "wrap", textAlign: "center", margin: sizes.MARGIN_MIN }}>Add Your Preferred Colors</div>
+                    <ul className='amenities-list'>
+                      {filter.colors.map((color, index) => <div key={index} className='colors-list-item' style={{ backgroundColor: color.code, color: color.code }}><MdOutlineCancel id="cancle-icon" onClick={() => removeValue("colors", color)} /></div>)}
+                    </ul>
+                    <SelectInput options={colorsList} hasCodes={true} placeholder={"Type the colors you are looking for "} onClick={(input) => addValue('colors', input)} />
+                  </div>
+                ) : null
+              }
             </div>
             <div className='filter-parameters-container-container'>
               <div className='filter-parameters-container'>
@@ -140,7 +174,7 @@ function SearchConfig() {
 
             </div>
           </div>
-          <BorderBevelButton className='border-white-button' placeholder={"Update Filter"} onClick={UploadFilter} fontSize={sizes.BUTTON_FONT_SMALL} margin={sizes.MARGIN_MAX} align={"flex-end"} />
+          <BorderBevelButton className='border-white-button' placeholder={"Update Search Filter"} width={200} onClick={UploadFilter} fontSize={sizes.BUTTON_FONT_SMALL} margin={sizes.MARGIN_MAX} align={"flex-end"} />
         </div>
       </section>
       <section className='about-filter-algorithm-priorities'>
@@ -164,12 +198,12 @@ function SearchConfig() {
             <div>At SmartProp Africa, we offer users the ability to set personalized priorities that help refine and weigh the search algorithm to suit their unique preferences. When setting up your property search, you can not only choose basic filters like location and budget but also rank the importance of different criteria. For example, you can prioritize factors such as proximity to schools, access to public transportation, or having a spacious garden. This allows the algorithm to understand which features matter most to you and adjust its recommendations accordingly.</div>
             <div>As you assign weight to your priorities, the algorithm adapts, ensuring that the homes you see reflect these preferences. If being near a city center is your top priority, the algorithm will prioritize listings with central locations over other factors, even if they fall slightly outside your budget or lack other features. On the other hand, if having a modern kitchen or extra bedrooms is more important than location, those criteria will take precedence in your search results.</div>
             <div>By setting these restrictions and priorities, you have greater control over the home search process. It fine-tunes the algorithm to focus on what truly matters to you, helping you find the perfect property faster and with more precision. This personalized approach makes the home-buying experience efficient, tailored, and aligned with your specific lifestyle and needs.</div>
-            
-            
 
-            
 
-            
+
+
+
+
           </div>
         </div>
       </section>

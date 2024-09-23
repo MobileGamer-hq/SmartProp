@@ -21,7 +21,7 @@ import {
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getPerformance } from "firebase/performance";
-import { Admin, Buyer, Seller, User } from "./DataModels";
+import { Admin, Buyer, Search_Filter, Search_Priority, Seller, User } from "./DataModels";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -53,6 +53,7 @@ export const signUp = async (usernaeme, email, password, role) => {
       newUser.name = usernaeme;
       newUser.login.email = email;
       newUser.login.password = password;
+      newUser.contact_info.contact_email = email;
 
       if (password !== process.env.adminKey) {
         if (role === "seller") {
@@ -61,6 +62,8 @@ export const signUp = async (usernaeme, email, password, role) => {
         } else {
           newUser.role = "buyer";
           newUser.roleData = Buyer;
+          newUser.roleData.search_filter = Search_Filter;
+          newUser.roleData.priority = Search_Priority;
         }
       } else {
         newUser.role = "admin";
@@ -175,4 +178,16 @@ export const logOut = () => {
       // An error happened.
       console.log(error);
     });
+};
+
+//write functions for getting and setting firestore data with the id and collection name
+export const getData = async (collectionName, id) => {
+  const docRef = doc(db, collectionName, id);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else {
+    console.log("No such document!");
+    return User;
+  }
 };

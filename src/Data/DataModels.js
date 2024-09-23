@@ -48,7 +48,7 @@ export const colors = {
 
 //Data Models
 export const User = {
-  username: "",
+  name: "",
   profile_picture: "",
   id: "",
   login: {
@@ -75,6 +75,7 @@ export const Property = {
   price: 0,
   type: "",
   description: {
+    title: '',
     colors: [],
     pictures: [],
     tags: [],
@@ -131,11 +132,14 @@ export const Search_Filter = {
 
   inside_estate: false,
   smart_home: true,
+  colors_matter: false,
+
   square_footage: 0,
   city: "",
   state: "",
   estate: "",
 
+  colors: [],
   amenities: [],
 };
 
@@ -291,3 +295,70 @@ export const amenities = [
   "Unfurnished",
   "Furnished",
 ];
+
+export const listOfColors  = [
+  { color: "White", code: "#FFFFFF" },
+  { color: "Gray", code: "#808080" },
+  { color: "Beige", code: "#F5F5DC" },
+  { color: "Cream", code: "#FFFDD0" },
+  { color: "Light Blue", code: "#ADD8E6" },
+  { color: "Navy Blue", code: "#000080" },
+  { color: "Brown", code: "#8B4513" },
+  { color: "Olive Green", code: "#808000" },
+  { color: "Sage Green", code: "#B2AC88" },
+  { color: "Pale Yellow", code: "#FFFFE0" },
+  { color: "Terracotta", code: "#E2725B" },
+  { color: "Charcoal", code: "#36454F" },
+  { color: "Tan", code: "#D2B48C" },
+  { color: "Soft Pink", code: "#F4C2C2" },
+  { color: "Lavender", code: "#E6E6FA" },
+  { color: "Dusty Rose", code: "#DCAE96" },
+  { color: "Forest Green", code: "#228B22" },
+  { color: "Sky Blue", code: "#87CEEB" },
+  { color: "Sandstone", code: "#786D5F" },
+  { color: "Light Gray", code: "#D3D3D3" },
+  { color: "Brick Red", code: "#CB4154" },
+  { color: "Mustard Yellow", code: "#FFDB58" },
+  { color: "Mint Green", code: "#98FF98" },
+  { color: "Light Taupe", code: "#B38B6D" },
+  { color: "Cottage Blue", code: "#5B92E5" },
+  { color: "Soft Peach", code: "#FFDAB9" },
+  { color: "Warm Beige", code: "#E5C4A1" },
+  { color: "Dark Chocolate", code: "#3C1414" },
+  { color: "Ocean Blue", code: "#4F42B5" },
+  { color: "Teal", code: "#008080" }
+];
+
+const test = {
+  "White" : "#FFFFFF",
+  "Gray": "#808080",
+ "Beige": "#F5F5DC",
+ "Cream": "#FFFDD0",
+ "Light Blue": "#ADD8E6",
+ "Navy Blue": "#000080",
+ "Brown": "#8B4513",
+ "Olive Green": "#808000",
+ "Sage Green": "#B2AC88",
+ "Pale Yellow": "#FFFFE0",
+ "Terracotta": "#E2725B",
+ "Charcoal": "#36454F",
+ "Tan": "#D2B48C",
+ "Soft Pink": "#F4C2C2",
+ "Lavender": "#E6E6FA",
+ "Dusty Rose": "#DCAE96" ,
+ "Forest Green": "#228B22" ,
+ "Sky Blue": "#87CEEB" ,
+ "Sandstone": "#786D5F" ,
+ "Light Gray": "#D3D3D3" ,
+ "Brick Red": "#CB4154" ,
+ "Mustard Yellow": "#FFDB58" ,
+ "Mint Green": "#98FF98" ,
+ "Light Taupe": "#B38B6D" ,
+ "Cottage Blue": "#5B92E5" ,
+ "Soft Peach": "#FFDAB9" ,
+ "Warm Beige": "#E5C4A1" ,
+ "Dark Chocolate": "#3C1414" ,
+ "Ocean Blue": "#4F42B5" ,
+ "Teal": "#008080"
+};
+

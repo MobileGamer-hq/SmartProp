@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { colors } from "../Data/DataModels";
 
-const SelectInput = ({ options, placeholder, onClick, width = "100%" }) => {
+const SelectInput = ({ options, placeholder, onClick, width = "100%", hasCodes = false}) => {
   const [inputValue, setInputValue] = useState(""); // Stores the current input
   const [filteredOptions, setFilteredOptions] = useState(options); // Filtered options based on input
   const [isDropdownOpen, setDropdownOpen] = useState(false); // Controls dropdown visibility
@@ -11,9 +11,7 @@ const SelectInput = ({ options, placeholder, onClick, width = "100%" }) => {
     setInputValue(value);
 
     // Filter options based on input value
-    const filtered = options.filter((option) =>
-      option.toLowerCase().startsWith(value.toLowerCase())
-    );
+    const filtered = hasCodes ? options.filter((option) => option.color.toLowerCase().includes(value.toLowerCase())) : options.filter((option) => option.toLowerCase().includes(value.toLowerCase()));
     setFilteredOptions(filtered);
     
     // Show dropdown if there's input and matching options
@@ -87,7 +85,7 @@ const SelectInput = ({ options, placeholder, onClick, width = "100%" }) => {
               marginBottom: "5px", // Space between items
             }}
           >
-            {option}
+            {hasCodes ? option.color : option}
           </li>
           ))}
         </ul>

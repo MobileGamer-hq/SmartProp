@@ -55,7 +55,7 @@ export const signUp = async (usernaeme, email, password, role) => {
       newUser.login.password = password;
       newUser.contact_info.contact_email = email;
 
-      if (password !== process.env.adminKey) {
+      if (password !== process.env.REACT_APP_ADMIN_KEY) {
         if (role === "seller") {
           newUser.role = "seller";
           newUser.roleData = Seller;

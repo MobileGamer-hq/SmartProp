@@ -22,6 +22,8 @@ function Profile() {
 
   }, [])
 
+  
+
 
   return (
     <div className='profile-page'>
@@ -33,7 +35,7 @@ function Profile() {
               <div style={{ fontSize: sizes.FONT_MID, textWrap: "wrap", textAlign: "center", margin: sizes.MARGIN_MAX }}>{user.name}</div>
               <div style={{ fontSize: sizes.FONT_MIN, textWrap: "wrap", textAlign: "center", margin: sizes.MARGIN_MAX }}>{user.contact_info.contact_email || user.login.email}</div>
               <div style={{ fontSize: sizes.FONT_MIN, textWrap: "wrap", textAlign: "center", margin: sizes.MARGIN_MAX }}>{user.contact_info.contact_phone_number}</div>
-              <div style={{ fontSize: sizes.FONT_MIN, textWrap: "wrap", textAlign: "center", margin: sizes.MARGIN_MAX }}>Role: {user.role}</div>
+              <div style={{ fontSize: sizes.FONT_MIN, textWrap: "wrap", textAlign: "center", margin: sizes.MARGIN_MAX }}>Role: {user.role == 'buyer' ? 'Buyer' : user.role == 'seller' ? 'Seller' : 'Admin'}</div>
             </div>
           </div>
           <div>
